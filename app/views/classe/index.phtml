@@ -1,0 +1,49 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="page-header">
+    <h1>
+        Search classe
+    </h1>
+    <p>
+        <?php echo $this->tag->linkTo(["classe/new", "Create classe"]) ?>
+    </p>
+</div>
+
+<?php echo $this->getContent() ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "classe/search",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldCodClasse" class="col-sm-2 control-label">Cod Of Classe</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["Cod_Classe", "type" => "number", "class" => "form-control", "id" => "fieldCodClasse"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldClasse" class="col-sm-2 control-label">Classe</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["Classe", "size" => 30, "class" => "form-control", "id" => "fieldClasse"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Search", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>

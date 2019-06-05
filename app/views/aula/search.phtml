@@ -1,0 +1,67 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<?php use Phalcon\Tag; ?>
+
+<div class="row">
+    <nav>
+        <ul class="pager">
+            <li class="previous"><?php echo $this->tag->linkTo(["aula/index", "Go Back"]); ?></li>
+            <li class="next"><?php echo $this->tag->linkTo(["aula/new", "Create "]); ?></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="page-header">
+    <h1>Search result</h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<div class="row">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Cod Of Aula</th>
+            <th>Conteudo Of Aula</th>
+            <th>CLASSECod Of Classe</th>
+
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($page->items as $aula): ?>
+            <tr>
+                <td><?php echo $aula->Cod_aula ?></td>
+            <td><?php echo $aula->Conteudo_aula ?></td>
+            <td><?php echo $aula->CLASSECod_Classe ?></td>
+
+                <td><?php echo $this->tag->linkTo(["aula/edit/" . $aula->Cod_aula, "Edit"]); ?></td>
+                <td><?php echo $this->tag->linkTo(["aula/delete/" . $aula->Cod_aula, "Delete"]); ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+
+<div class="row">
+    <div class="col-sm-1">
+        <p class="pagination" style="line-height: 1.42857;padding: 6px 12px;">
+            <?php echo $page->current, "/", $page->total_pages ?>
+        </p>
+    </div>
+    <div class="col-sm-11">
+        <nav>
+            <ul class="pagination">
+                <li><?php echo $this->tag->linkTo("aula/search", "First") ?></li>
+                <li><?php echo $this->tag->linkTo("aula/search?page=" . $page->before, "Previous") ?></li>
+                <li><?php echo $this->tag->linkTo("aula/search?page=" . $page->next, "Next") ?></li>
+                <li><?php echo $this->tag->linkTo("aula/search?page=" . $page->last, "Last") ?></li>
+            </ul>
+        </nav>
+    </div>
+</div>

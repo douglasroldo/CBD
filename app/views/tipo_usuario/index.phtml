@@ -1,0 +1,49 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="page-header">
+    <h1>
+        Search tipo_usuario
+    </h1>
+    <p>
+        <?php echo $this->tag->linkTo(["tipo_usuario/new", "Create tipo_usuario"]) ?>
+    </p>
+</div>
+
+<?php echo $this->getContent() ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "tipo_usuario/search",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldCodTipoUsuario" class="col-sm-2 control-label">Cod Of Tipo Of Usuario</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["Cod_tipo_usuario", "type" => "number", "class" => "form-control", "id" => "fieldCodTipoUsuario"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldTipoUsuario" class="col-sm-2 control-label">Tipo Of Usuario</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["Tipo_usuario", "size" => 30, "class" => "form-control", "id" => "fieldTipoUsuario"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Search", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>
