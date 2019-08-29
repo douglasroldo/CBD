@@ -3,14 +3,13 @@
 
 <div class="jumbotron">
     <h1>Bem vindo a CBS </h1>
-    <p>INVO is a revolutionary application to create invoices online for free.
-    Receive online payments from your clients and improve your cash flow</p>
+    <p>CBS (Escola Bíblica Conectada) é um sistema que serve como apoio na organização, e tambem na disseminação do conhecimento que é tranmitido ...</p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Manage Invoices Online</h2>
-        <p>Create, track and export your invoices online. Automate recurring invoices and design your own invoice using our invoice template and brand it with your business logo. </p>
+        <h2>Vantagens do Uso</h2>
+        <p>O uso do CBS ajuda no processo da escola bíblica, ele traz uma forma de <i>feedback</i> dos processos de aprendizagem e envolvimento dos alunos. </p>
     </div>
     <div class="col-md-4">
         <h2>Dashboards And Reports</h2>
